@@ -48,6 +48,7 @@ void stopMusic(void){
     if(!self) return nil;
 
 	//PAS sur de ca
+  NSLog(@"Audio initialisiert!!");
 	AudioSessionInitialize( CFRunLoopGetCurrent(), 
 						   NULL, 
 						   NULL, 
@@ -158,7 +159,8 @@ void stopMusic(void){
 - (void)playMusicForContext:(NSString*)context andLoop:(BOOL)mustLoop
 {
     DBG_LOG();
-    
+  NSLog(@"starting music, context:%@ Loop:",context);
+  
     // Change the racing music randomly
     if([context isEqualToString:@"racing"])
     {
@@ -189,7 +191,7 @@ void stopMusic(void){
         }
     }
 	[audioPlayer setVolume:45];
-    [audioPlayer play];
+  //[audioPlayer play];
 }
 
 - (void)setVolume:(int)volume forContext:(NSString*)context
