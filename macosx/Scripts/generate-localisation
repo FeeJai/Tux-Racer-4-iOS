@@ -1,0 +1,34 @@
+#!/bin/sh
+
+DIR_PATH=`dirname $0`
+cd $DIR_PATH/..
+
+#########################################
+# Generates English Localizable.strings #
+#########################################
+echo "***Generating Localizable.strings files***"
+genstrings -o English.lproj/ -s Localize ../src/*.c
+genstrings -o English.lproj/Temp/ Classes/*.m
+echo ""
+echo "***CombiningLocalizable.strings files***"
+wincent-strings-util --base English.lproj/Localizable.strings --combine English.lproj/Temp/Localizable.strings --output English.lproj/Localizable.strings
+
+########################################
+# Generates English MainWindow.strings #
+########################################
+echo ""
+echo "***Generating English MainWindow.strings***"
+ibtool --generate-strings-file English.lproj/MainWindow.strings English.lproj/MainWindow.xib
+
+############################################################
+# Generates 2 files whith new translations in French.lproj #
+############################################################
+echo ""
+echo "***Generating 2 files with new translations *.new.xib in French.lproj***"
+wincent-strings-util --base English.lproj/MainWindow.strings --extract French.lproj/MainWindow.strings  --output French.lproj/MainMenu.new.strings
+wincent-strings-util --base English.lproj/Localizable.strings --extract French.lproj/Localizable.strings  --output French.lproj/Localizable.new.strings
+echo ""
+echo "***You can now traduce those two new files and then, execute the script combine-files***"
+
+mate French.lproj/MainMenu.new.strings
+mate French.lproj/Localizable.new.strings

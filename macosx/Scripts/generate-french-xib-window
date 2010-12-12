@@ -1,0 +1,10 @@
+#!/bin/sh
+
+DIR_PATH=`dirname $0`
+cd $DIR_PATH/..
+
+###################################
+# Generates French MainWindow.xib #
+###################################
+echo "Generating French MainWindow.xib"
+ibtool --strings-file French.lproj/MainWindow.strings --write French.lproj/MainWindow.xib English.lproj/MainWindow.xib

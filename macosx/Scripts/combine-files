@@ -1,0 +1,13 @@
+#!/bin/sh
+
+DIR_PATH=`dirname $0`
+cd $DIR_PATH/..
+
+######################################################
+# Combine files when new translations have been made #
+###################################################### 
+echo "***adding the new translations to the .strings files***"
+wincent-strings-util --base French.lproj/MainWindow.strings --combine French.lproj/MainWindow.new.strings  --output French.lproj/MainWindow.strings
+wincent-strings-util --base French.lproj/Localizable.strings --combine French.lproj/Localizable.new.strings  --output French.lproj/Localizable.strings
+echo ""
+echo "***You can now execute the script generate-french-xib-window***"
