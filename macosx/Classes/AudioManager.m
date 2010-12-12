@@ -48,7 +48,6 @@ void stopMusic(void){
     if(!self) return nil;
 
 	//PAS sur de ca
-  NSLog(@"Audio initialisiert!!");
 	AudioSessionInitialize( CFRunLoopGetCurrent(), 
 						   NULL, 
 						   NULL, 
