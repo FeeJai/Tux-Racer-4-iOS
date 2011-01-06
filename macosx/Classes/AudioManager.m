@@ -8,30 +8,31 @@
 
 #import "AudioManager.h"
 #import "AudioToolbox/AudioServices.h"
-#import "AudioToolbox/AudioQueue.h"
 #import "prefsController.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
 
 static AudioManager* sharedAudioManager=nil;
 
 
 void playIphoneMusic(const char* context, int mustLoop){
-	[sharedAudioManager playMusicForContext:[NSString stringWithUTF8String:context] andLoop:mustLoop];
+	[[AudioManager sharedAudioManager] playMusicForContext:[NSString stringWithUTF8String:context] andLoop:mustLoop];
 }
 
 void playIphoneSound(const char* context, int isSystemSound){
-	[sharedAudioManager playSoundForContext:[NSString stringWithUTF8String:context] isSystemSound:isSystemSound];
+	[[AudioManager sharedAudioManager] playSoundForContext:[NSString stringWithUTF8String:context] isSystemSound:isSystemSound];
 }
 
 void adjustSoundGain(const char* context, int volume){
-	[sharedAudioManager setVolume:volume forContext:[NSString stringWithUTF8String:context]];
+	[[AudioManager sharedAudioManager] setVolume:volume forContext:[NSString stringWithUTF8String:context]];
 }
 
 void haltSound(const char* context){
-	[sharedAudioManager haltSoundForContext:[NSString stringWithUTF8String:context]];
+	[[AudioManager sharedAudioManager] haltSoundForContext:[NSString stringWithUTF8String:context]];
 }
 
 void stopMusic(void){
-	[sharedAudioManager stopMusic];
+	[[AudioManager sharedAudioManager] stopMusic];
 }
 
 #ifdef DEBUG_AUDIO
@@ -42,83 +43,103 @@ void stopMusic(void){
 
 @implementation AudioManager
 @synthesize _currentContext;
++ (AudioManager *)sharedAudioManager
+{
+  if(!sharedAudioManager)
+    sharedAudioManager = [[self alloc] init];
+  return sharedAudioManager;
+}
+
 - (id)init
 {
-    self = [super init];
-    if(!self) return nil;
-
+  self = [super init];
+  if(!self) return nil;
+  
 	//PAS sur de ca
 	AudioSessionInitialize( CFRunLoopGetCurrent(), 
-						   NULL, 
-						   NULL, 
-						   NULL);
+                         NULL, 
+                         NULL, 
+                         NULL);
 	sharedAudioManager=self;
-
-    _playingSoundContextStack = [[NSMutableArray array] retain];
-    _audioPlayersForContext = [[NSMutableDictionary dictionary] retain];
-    _musicAudioPlayers = [[NSMutableArray array] retain];
-    _soundAudioPlayers = [[NSMutableArray array] retain];
-
+  
+  _playingSoundContextStack = [[NSMutableArray array] retain];
+  _audioPlayersForContext = [[NSMutableDictionary dictionary] retain];
+  _musicURLForContext = [[NSMutableDictionary dictionary] retain];
+  _soundAudioPlayers = [[NSMutableArray array] retain];
+  
 	NSString* dataDir = [[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"TRWC-data"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	NSString* soundsDir = [dataDir stringByAppendingPathComponent:@"iPhone_sounds"];
 	NSString* musicsDir = [dataDir stringByAppendingPathComponent:@"iPhone_music"];
-    
-    //sets defaults if no prefs exists
-    [prefsController setDefaults];
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-
-    NSString * soundsName[] = {        @"tux_on_snow1.aif", @"tux_on_ice1.aif", @"tux_on_rock1.aif", @"tux_in_air1.aif" };
-    NSString * soundContexts[] = { @"snow_sound",       @"ice_sound",       @"rock_sound",       @"flying_sound" };
-    int i;
-    for(i = 0; i < sizeof(soundsName)/sizeof(*soundsName); i++) {
-        AudioPlayer * audioPlayer = [[AudioPlayer alloc] initWithURL:[NSURL URLWithString:[soundsDir stringByAppendingPathComponent:soundsName[i]]]];
-        [audioPlayer setGainFactor: [prefs floatForKey:@"soundsVolume"]];
-        [_audioPlayersForContext setObject:audioPlayer forKey:soundContexts[i]];
-        [_soundAudioPlayers addObject:audioPlayer];
-        [audioPlayer release];
+  
+  //sets defaults if no prefs exists
+  [prefsController setDefaults];
+  NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+  
+  NSString * soundsName[] = {        @"tux_on_snow1.aif", @"tux_on_ice1.aif", @"tux_on_rock1.aif", @"tux_in_air1.aif" };
+  NSString * soundContexts[] = { @"snow_sound",       @"ice_sound",       @"rock_sound",       @"flying_sound" };
+  int i;
+  for(i = 0; i < sizeof(soundsName)/sizeof(*soundsName); i++) {
+    AVAudioPlayer* audioPlayer =[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL URLWithString:[soundsDir stringByAppendingPathComponent:soundsName[i]]] error:NULL];
+    audioPlayer.volume = [prefs floatForKey:@"soundsVolume"];
+    audioPlayer.numberOfLoops = -1;
+    [_audioPlayersForContext setObject:audioPlayer forKey:soundContexts[i]];
+    [_soundAudioPlayers addObject:audioPlayer];
+    [audioPlayer release];
 	}
-
-    NSString * musicName[] = {        @"start1_loop.aif", @"loading-ad_loop.aif", @"race1-rlb.aif", @"race2-jt.aif", @"wonrace1-jt.aif", @"options1-jt_loop.aif" };
-    NSString * musicContexts[] = { @"start_screen",    @"credits_screen",       @"racing", @"racing2",            @"game_over" , @"loading"};
-    for(i = 0; i < sizeof(musicName)/sizeof(*musicName); i++) {
-        AudioPlayer * audioPlayer = [[AudioPlayer alloc] initWithURL:[NSURL URLWithString:[musicsDir stringByAppendingPathComponent:musicName[i]]]];
-        [audioPlayer setGainFactor: [prefs floatForKey:@"musicVolume"]];
-        [_audioPlayersForContext setObject:audioPlayer forKey:musicContexts[i]];
-        [_musicAudioPlayers addObject:audioPlayer];
-        [audioPlayer release];
+  
+  
+  //FJFJ
+  //old music:
+  
+  NSString * musicName[] = {        @"start1_loop.aif", @"loading-ad_loop.aif", @"race1-rlb.aif", @"race2-jt.aif", @"wonrace1-jt.aif", @"options1-jt_loop.aif" };
+  NSString * musicContexts[] = { @"start_screen",    @"credits_screen",       @"racing", @"racing2",            @"game_over" , @"loading"};
+  
+  /*
+   NSString * musicName[] = {@"start1_loop.aif", @"loading-ad_loop.aif", @"race1-rlb.aif", @"she-said-no.aif", @"glacon.aif" , @"gotta_work.aif", @"race1-jt_loop.aif",@"race2-jt.aif", @"wonrace1-jt.aif", @"options1-jt_loop.aif" };
+   NSString * musicContexts[] = { @"start_screen", @"credits_screen", @"racing"  @"racing2", @"racing3", @"racing4", @"racing5", @"racing6", @"game_over", @"loading"};
+   
+   */
+  
+  
+  for(i = 0; i < sizeof(musicName)/sizeof(*musicName); i++) {
+    NSURL *musicURL = [NSURL URLWithString:[musicsDir stringByAppendingPathComponent:musicName[i]]];
+    [_musicURLForContext setObject:musicURL forKey:musicContexts[i]];
 	}
+  
+  
+  
 	_systemSoundIDForContext = [[NSMutableDictionary dictionary] retain];
-    NSURL* soundUrl;
-    SystemSoundID soundID;
-
-    soundUrl = [NSURL URLWithString:[soundsDir stringByAppendingPathComponent:@"fish_pickup1.aif"]];
-    AudioServicesCreateSystemSoundID ((CFURLRef)soundUrl, &soundID);
+  NSURL* soundUrl;
+  SystemSoundID soundID;
+  
+  soundUrl = [NSURL URLWithString:[soundsDir stringByAppendingPathComponent:@"fish_pickup1.aif"]];
+  AudioServicesCreateSystemSoundID ((CFURLRef)soundUrl, &soundID);
 	[_systemSoundIDForContext setObject:[NSNumber numberWithInt:soundID] forKey:@"item_collect"];
-
-    soundUrl = [NSURL URLWithString:[soundsDir stringByAppendingPathComponent:@"tux_hit_tree1.aif"]];
-    AudioServicesCreateSystemSoundID ((CFURLRef)soundUrl, &soundID);
+  
+  soundUrl = [NSURL URLWithString:[soundsDir stringByAppendingPathComponent:@"tux_hit_tree1.aif"]];
+  AudioServicesCreateSystemSoundID ((CFURLRef)soundUrl, &soundID);
 	[_systemSoundIDForContext setObject:[NSNumber numberWithInt:soundID] forKey:@"hit_tree"];
-		
+  
 	return self;
 }
 
 - (void)dealloc
 {
-    [_soundAudioPlayers release];
-    [_musicAudioPlayers release];
-    for(NSNumber * num in _systemSoundIDForContext) {
-        SystemSoundID soundID = [num intValue];
-        AudioServicesDisposeSystemSoundID (soundID);
-    }
-    [_systemSoundIDForContext release];
-    [_audioPlayersForContext release];
-    [_currentContext release];
-    [super dealloc];
+  [_soundAudioPlayers release];
+  [_musicURLForContext release];
+  for(NSNumber * num in _systemSoundIDForContext) {
+    SystemSoundID soundID = [num intValue];
+    AudioServicesDisposeSystemSoundID (soundID);
+  }
+  [_systemSoundIDForContext release];
+  [_audioPlayersForContext release];
+  [_currentContext release];
+  [super dealloc];
 }
 
 - (void)playSoundForContext:(NSString*)context isSystemSound:(BOOL)isSS
 {
-    DBG_LOG();
+  DBG_LOG();
 	if (isSS)
 	{
 		SystemSoundID soundID = [[_systemSoundIDForContext objectForKey:context] intValue];
@@ -126,96 +147,126 @@ void stopMusic(void){
 	}
 	else
 	{
-        AudioPlayer * audioPlayer = [_audioPlayersForContext objectForKey:context];
-        assert(audioPlayer);
-        [audioPlayer play];
+    AVAudioPlayer *audioPlayer = [_audioPlayersForContext objectForKey:context];
+    assert(audioPlayer);
+    [audioPlayer play];
 	}
 }
 
 - (void)haltSoundForContext:(NSString*)context
 {
-    DBG_LOG();
-    AudioPlayer * audioPlayer = [_audioPlayersForContext objectForKey:context];
-    assert(audioPlayer);
-    if([_musicAudioPlayers containsObject:audioPlayer])
-        [audioPlayer stop];
-    else
-        [audioPlayer pause];
+  DBG_LOG();
+  AVAudioPlayer *audioPlayer = [_audioPlayersForContext objectForKey:context];
+  assert(audioPlayer);
+  [audioPlayer stop];
 }
 
 - (void)stopMusic
 {
-    for(AudioPlayer * anAudioPlayer in _musicAudioPlayers)
-    {
-        if([_musicAudioPlayers containsObject:anAudioPlayer])
-            [anAudioPlayer stop];
-        else
-            [anAudioPlayer pause];
-    }
-
+  if (_musicPlayer) {
+    [_musicPlayer stop];
+    [_musicPlayer release];
+    _musicPlayer = nil;
+  }
+  
 }
 
 - (void)playMusicForContext:(NSString*)context andLoop:(BOOL)mustLoop
 {
-    DBG_LOG();
-  NSLog(@"starting music, context:%@ Loop:",context);
+  DBG_LOG();
   
-    // Change the racing music randomly
-    if([context isEqualToString:@"racing"])
+  // Change the racing music randomly
+  if([context isEqualToString:@"racing"])
+  {
+    //Merge la musique d'intro et de race
+    //Si l'intro joue déjà une des deux musiques, on n'en change pas
+    if ([_currentContext isEqualToString:@"racing"]||[_currentContext isEqualToString:@"racing2"]||[_currentContext isEqualToString:@"racing3"]||[_currentContext isEqualToString:@"racing4"]||[_currentContext isEqualToString:@"racing5"]||[_currentContext isEqualToString:@"racing6"])
     {
-        //Merge la musique d'intro et de race
-        //Si l'intro joue déjà une des deux musiques, on n'en change pas
-        if ([_currentContext isEqualToString:@"racing"]||[_currentContext isEqualToString:@"racing2"])
-        {
-            context=[NSString stringWithString:_currentContext];
-        }
-        else
-        {
-            if(rand() % 2 == 0)
-                context = @"racing2";
-        }
+      context=[NSString stringWithString:_currentContext];
     }
-    [_currentContext release];
-    _currentContext=[[NSString stringWithString:context] retain];
-    AudioPlayer * audioPlayer = [_audioPlayersForContext objectForKey:context];
-    assert(audioPlayer);
-
-    for(AudioPlayer * anAudioPlayer in _musicAudioPlayers)
+    else
     {
-        if(anAudioPlayer != audioPlayer) {
-            if([_musicAudioPlayers containsObject:anAudioPlayer])
-                [anAudioPlayer stop];
-            else
-                [anAudioPlayer pause];
-        }
+      //FJFJ
+      /*int r = rand() % 6;
+       
+       switch (r) {
+       case 1:
+       context = @"racing";
+       break;
+       case 2:
+       context = @"racing2";
+       break;
+       case 3:
+       context = @"racing3";
+       break;
+       case 4:
+       context = @"racing4";
+       break;
+       case 5:
+       context = @"racing4";
+       break;
+       default:
+       context = @"racing6";
+       break;
+       }
+       */
+      
+      int r = rand() % 2;
+      switch (r) {
+        case 0:
+          context = @"racing";
+          break;
+        case 1:
+          context = @"racing2";
+          break;
+        default:
+          context = @"racing";
+          break;
+      }
+      
     }
-	[audioPlayer setVolume:45];
-  //[audioPlayer play];
+  }
+  
+  if ([_currentContext isEqualToString:context]) 
+    return;
+  
+  [_currentContext release];
+  _currentContext=[[NSString stringWithString:context] retain];
+  
+  if (_musicPlayer) {
+    [_musicPlayer stop];
+    [_musicPlayer release];
+    _musicPlayer = nil;
+  }
+  
+  _musicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[_musicURLForContext objectForKey:_currentContext] error:NULL];
+  NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+  _musicPlayer.volume = [prefs floatForKey:@"musicVolume"];
+  _musicPlayer.numberOfLoops = mustLoop ? -1 : 0;
+  [_musicPlayer play];
 }
 
 - (void)setVolume:(int)volume forContext:(NSString*)context
 {
-    DBG_LOG();
-    AudioPlayer * audioPlayer = [_audioPlayersForContext objectForKey:context];
-    assert(audioPlayer);
-	[audioPlayer setVolume:volume];
+  Float32 maxVolume = 128.0;
+  DBG_LOG();
+  AVAudioPlayer * audioPlayer = [_audioPlayersForContext objectForKey:context];
+  assert(audioPlayer);
+	audioPlayer.volume = (Float32)volume/maxVolume;
 }
 
 - (void)setSoundGainFactor:(Float32)gain
 {
-    for(AudioPlayer * audioPlayer in _soundAudioPlayers)
-    {
-        [audioPlayer setGainFactor:gain];
-        [audioPlayer updateVolume];
-    }
+  for(AVAudioPlayer *audioPlayer in _soundAudioPlayers)
+  {
+    audioPlayer.volume = gain;
+  }
 }
 
 - (void)setMusicGainFactor:(Float32)gain
 {
-    for(AudioPlayer * audioPlayer in _musicAudioPlayers)
-    {
-        [audioPlayer setGainFactor:gain];
-        [audioPlayer updateVolume];
-    }
+  if (_musicPlayer) {
+    _musicPlayer.volume = gain;
+  }
 }
 @end

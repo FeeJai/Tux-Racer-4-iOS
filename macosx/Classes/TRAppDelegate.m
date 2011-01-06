@@ -12,7 +12,7 @@
 #import "sharedGeneralFunctions.h"
 #import<AudioToolbox/AudioToolbox.h>
 
-static const float kHighFrameRateFPS = 60.;
+static const float kHighFrameRateFPS = 30.;
 static const float kLowFrameRateFPS = 10.;
 
 int libtuxracer_main( int argc, char **argv );
@@ -141,7 +141,7 @@ static id sharedAppDelegate = nil;
     [glView setMultipleTouchEnabled:YES];
     
     //Starts animation
-	glView.animationInterval = 1.0 / 60.0;
+	glView.animationInterval = 1.0 / 30.0;
 	[glView startAnimation];
     
     //hiddes status bar

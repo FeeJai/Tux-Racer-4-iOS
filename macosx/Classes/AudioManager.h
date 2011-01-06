@@ -7,19 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AudioPlayer.h"
 #import "sharedAudioFunctions.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface AudioManager : NSObject {
     NSMutableArray * _playingSoundContextStack;
-    NSMutableArray * _musicAudioPlayers;
     NSMutableArray * _soundAudioPlayers;
     NSMutableDictionary * _systemSoundIDForContext;
     NSMutableDictionary * _audioPlayersForContext;
+    NSMutableDictionary * _musicURLForContext;
+    AVAudioPlayer *_musicPlayer;
     NSString* _currentContext;
 }
 
 @property(nonatomic,retain) NSString* _currentContext;
+
++ (AudioManager *)sharedAudioManager;
 
 - (void)setSoundGainFactor:(Float32)gain;
 - (void)setMusicGainFactor:(Float32)gain;
