@@ -17,7 +17,10 @@ int main(int argc, char *argv[]) {
 
 //Bugfix for Snow Leopard
 
+/*
 
 FILE *fdopen$UNIX2003(int fildes, const char *mode) {
   return fdopen(fildes, mode);
 }
+
+*/

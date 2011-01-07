@@ -63,27 +63,26 @@ void bonus_init() {
 }
 
 static bonus_data_t * create_bonus(const char* text, int value) {
-    char* buf,*buf2;
+  char* buf, buf2[15];
     bonus_data_t * ret;
-    ret = calloc(1,sizeof(bonus_data_t));
-    ret->bonus=value;
+  ret = calloc(1,sizeof(bonus_data_t));
+
+  ret->bonus=value;
     
     /*On initialise le nouveau bonus */
     if (value>0) {
-        if (asprintf(&buf2, ": %d pts" ,value) == -1) {
-            buf2=NULL;
+        if (sprintf(buf2, ": %d pts" ,value) == -1) {
+            buf2[0]='\0';
         } 
     } else {
-        buf2="";
+        buf2[0]='\0';
     }
     
     if (asprintf(&buf, "%s%s" , text,buf2 ) != -1) {
         ret->bonus_string=buf;
     } else ret->bonus_string = NULL;
     
-    free(buf2);
-    buf2=NULL;
-    
+  
     ret->start_time = g_game.time;
     
     player_data_t* plyr = get_player_data(local_player());

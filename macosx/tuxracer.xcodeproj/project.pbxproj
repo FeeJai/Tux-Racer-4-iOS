@@ -250,8 +250,8 @@
 		632B513B0F2230F900A22BB8 /* racing_mode_select.c in Sources */ = {isa = PBXBuildFile; fileRef = 632B51390F2230F900A22BB8 /* racing_mode_select.c */; };
 		632B513C0F2230F900A22BB8 /* racing_mode_select.c in Sources */ = {isa = PBXBuildFile; fileRef = 632B51390F2230F900A22BB8 /* racing_mode_select.c */; };
 		8C08276B12B5A0AD0002CBA5 /* libtcl8.6-42.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C08276A12B5A0AD0002CBA5 /* libtcl8.6-42.a */; };
+		8C26C55F12D684B6003633FB /* libtcl8.6-iPhoneSim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C26C55E12D684B6003633FB /* libtcl8.6-iPhoneSim.a */; };
 		8CA3F52E12B5423B00C382A2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA3F52D12B5423B00C382A2 /* libz.dylib */; };
-		8CA3F54012B5429A00C382A2 /* libtcl8.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA3F53F12B5429A00C382A2 /* libtcl8.6.a */; };
 		8CDB4BCC12D65F5C00E21C35 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDB4BCB12D65F5C00E21C35 /* MediaPlayer.framework */; };
 		8CDB4BE812D65FCC00E21C35 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDB4BE712D65FCC00E21C35 /* AVFoundation.framework */; };
 		8CDB4C5012D6650E00E21C35 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDB4BE712D65FCC00E21C35 /* AVFoundation.framework */; };
@@ -483,8 +483,8 @@
 		637B9CC20EE1BA5900605E02 /* Tux Racer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tux Racer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63894B7B0EAFDFAD00A575FF /* iphonegl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iphonegl.h; sourceTree = "<group>"; };
 		8C08276A12B5A0AD0002CBA5 /* libtcl8.6-42.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libtcl8.6-42.a"; sourceTree = "<group>"; };
+		8C26C55E12D684B6003633FB /* libtcl8.6-iPhoneSim.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libtcl8.6-iPhoneSim.a"; sourceTree = "<group>"; };
 		8CA3F52D12B5423B00C382A2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = "<absolute>"; };
-		8CA3F53F12B5429A00C382A2 /* libtcl8.6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtcl8.6.a; sourceTree = "<group>"; };
 		8CDB4BCB12D65F5C00E21C35 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		8CDB4BE712D65FCC00E21C35 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -517,9 +517,9 @@
 				32A3740D0EC5C29600142BBA /* AudioToolbox.framework in Frameworks */,
 				3260774A0EF0A3D9004D6A77 /* CoreGraphics.framework in Frameworks */,
 				8CA3F52E12B5423B00C382A2 /* libz.dylib in Frameworks */,
-				8CA3F54012B5429A00C382A2 /* libtcl8.6.a in Frameworks */,
 				8CDB4BCC12D65F5C00E21C35 /* MediaPlayer.framework in Frameworks */,
 				8CDB4BE812D65FCC00E21C35 /* AVFoundation.framework in Frameworks */,
+				8C26C55F12D684B6003633FB /* libtcl8.6-iPhoneSim.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,7 +692,7 @@
 		32A374180EC5C33400142BBA /* Simulator */ = {
 			isa = PBXGroup;
 			children = (
-				8CA3F53F12B5429A00C382A2 /* libtcl8.6.a */,
+				8C26C55E12D684B6003633FB /* libtcl8.6-iPhoneSim.a */,
 			);
 			name = Simulator;
 			sourceTree = "<group>";
@@ -899,6 +899,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "tuxracer" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -1239,7 +1240,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Tux Racer";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos;
 				TUXRIDER_VAR_ID = Tux_Racer_iPhone_1.0;
 			};
 			name = Debug;
@@ -1261,7 +1262,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Tux Racer";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos;
 				TUXRIDER_VAR_ID = Tux_Racer_iPhone_1.0;
 			};
 			name = Release;
@@ -1269,7 +1270,7 @@
 		32A374100EC5C29600142BBA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include";
 				INFOPLIST_FILE = Info.plist;
@@ -1280,7 +1281,8 @@
 				);
 				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_NAME = "Tux Racer";
-				SDKROOT = iphonesimulator3.1.3;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				TUXRIDER_VAR_ID = TuxRacer4iPhone;
 			};
 			name = Debug;
@@ -1288,7 +1290,7 @@
 		32A374110EC5C29600142BBA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include";
 				INFOPLIST_FILE = Info.plist;
@@ -1299,7 +1301,8 @@
 				);
 				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_NAME = "Tux Racer";
-				SDKROOT = iphonesimulator3.1.3;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				TUXRIDER_VAR_ID = TuxRacer4iPhone;
 			};
 			name = Release;
@@ -1308,7 +1311,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: emmanuel de Roux";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Felix Jankowski (8P9LV85RN4)";
 				DEPLOYMENT_POSTPROCESSING = YES;
 				ENABLE_OPENMP_SUPPORT = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -1324,8 +1327,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "$(TUXRIDER_EXTRA_CFLAGS)";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "1A9AD09F-5F51-4FED-BC0F-562BEF5C7DF4";
-				SDKROOT = iphoneos3.1.3;
+				PROVISIONING_PROFILE = "10512AE3-EDBE-4EA1-9860-129AA6AA9E31";
+				SDKROOT = iphoneos4.2;
 				SEPARATE_STRIP = YES;
 				TUXRIDER_BIC_ID = v1.1;
 				TUXRIDER_EXTRA_CFLAGS = "-DTUXRIDER_ROOT_SERVER=@\\\"$(TUXRIDER_ROOT_SERVER)/\\\" -DTUXRIDER_BIC_ID=\\\"$(TUXRIDER_BIC_ID)\\\" -DTUXRIDER_VAR_ID=\\\"$(TUXRIDER_VAR_ID)\\\" -DTUXRIDER_TOC=$(TUXRIDER_TOC)";
@@ -1353,7 +1356,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Tux Racer";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos;
 				TUXRIDER_VAR_ID = Tux_Racer_iPhone_1.0;
 			};
 			name = "App Store";
@@ -1361,7 +1364,7 @@
 		32AA35420F12778C008A26DF /* App Store */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include";
 				INFOPLIST_FILE = Info.plist;
@@ -1372,7 +1375,8 @@
 				);
 				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_NAME = "Tux Racer";
-				SDKROOT = iphonesimulator3.1.3;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				TUXRIDER_VAR_ID = TuxRacer4iPhone;
 			};
 			name = "App Store";
@@ -1381,7 +1385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: emmanuel de Roux";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Felix Jankowski (8P9LV85RN4)";
 				DEPLOYMENT_POSTPROCESSING = YES;
 				ENABLE_OPENMP_SUPPORT = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -1397,8 +1401,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "$(TUXRIDER_EXTRA_CFLAGS)";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "1A9AD09F-5F51-4FED-BC0F-562BEF5C7DF4";
-				SDKROOT = iphoneos3.1.3;
+				PROVISIONING_PROFILE = "10512AE3-EDBE-4EA1-9860-129AA6AA9E31";
+				SDKROOT = iphoneos4.2;
 				SEPARATE_STRIP = YES;
 				TUXRIDER_BIC_ID = v1.1;
 				TUXRIDER_EXTRA_CFLAGS = "-DTUXRIDER_ROOT_SERVER=@\\\"$(TUXRIDER_ROOT_SERVER)/\\\" -DTUXRIDER_BIC_ID=\\\"$(TUXRIDER_BIC_ID)\\\" -DTUXRIDER_VAR_ID=\\\"$(TUXRIDER_VAR_ID)\\\" -DTUXRIDER_TOC=$(TUXRIDER_TOC)";
@@ -1426,7 +1430,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Tux Racer";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos;
 				TUXRIDER_VAR_ID = Tux_Racer_iPhone_1.0;
 			};
 			name = Distribution;
@@ -1434,7 +1438,7 @@
 		32B896D80F04434900FFE564 /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include";
 				INFOPLIST_FILE = Info.plist;
@@ -1445,7 +1449,8 @@
 				);
 				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_NAME = "Tux Racer";
-				SDKROOT = iphonesimulator3.1.3;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
 				TUXRIDER_VAR_ID = TuxRacer4iPhone;
 			};
 			name = Distribution;
@@ -1454,6 +1459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Felix Jankowski (8P9LV85RN4)";
 				DEPLOYMENT_POSTPROCESSING = NO;
 				ENABLE_OPENMP_SUPPORT = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -1472,7 +1478,8 @@
 					"-DTR_DEBUG_MODE",
 				);
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1.3;
+				PROVISIONING_PROFILE = "10512AE3-EDBE-4EA1-9860-129AA6AA9E31";
+				SDKROOT = iphoneos4.2;
 				STRIP_STYLE = all;
 				TUXRIDER_BIC_ID = v1.1;
 				TUXRIDER_EXTRA_CFLAGS = "-DTUXRIDER_ROOT_SERVER=@\\\"$(TUXRIDER_ROOT_SERVER)/\\\" -DTUXRIDER_BIC_ID=\\\"$(TUXRIDER_BIC_ID)\\\" -DTUXRIDER_VAR_ID=\\\"$(TUXRIDER_VAR_ID)\\\" -DTUXRIDER_TOC=$(TUXRIDER_TOC)";
@@ -1486,7 +1493,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: emmanuel de Roux";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Felix Jankowski (8P9LV85RN4)";
 				DEPLOYMENT_POSTPROCESSING = YES;
 				ENABLE_OPENMP_SUPPORT = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -1502,8 +1509,8 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "$(TUXRIDER_EXTRA_CFLAGS)";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "8400C68F-C19F-4913-9384-041E7C438D0B";
-				SDKROOT = iphoneos3.1.3;
+				PROVISIONING_PROFILE = "10512AE3-EDBE-4EA1-9860-129AA6AA9E31";
+				SDKROOT = iphoneos4.2;
 				SEPARATE_STRIP = YES;
 				TUXRIDER_BIC_ID = v1.1;
 				TUXRIDER_EXTRA_CFLAGS = "-DTUXRIDER_ROOT_SERVER=@\\\"$(TUXRIDER_ROOT_SERVER)/\\\" -DTUXRIDER_BIC_ID=\\\"$(TUXRIDER_BIC_ID)\\\" -DTUXRIDER_VAR_ID=\\\"$(TUXRIDER_VAR_ID)\\\" -DTUXRIDER_TOC=$(TUXRIDER_TOC)";

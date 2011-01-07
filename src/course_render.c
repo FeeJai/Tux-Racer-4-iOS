@@ -102,9 +102,14 @@ void calc_normals(const char *course)
         munmap(nmls, nmls_len);
         close(nmls_fd);
     }
-    else
+  //FJFJ
+  
+  /*  else
         free(nmls);
 
+   */
+  
+  
     struct stat buf;
     int exists = (stat(buff, &buf) == 0);
 
