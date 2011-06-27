@@ -45,71 +45,73 @@
 #define CREDITS_MIN_Y 64
 
 typedef struct {
-    char *binding;
-    char *text;
+  char *binding;
+  char *text;
 } credit_line_t;
 
 static credit_line_t credit_lines[] = 
 {
-{ "credits_h1", "Tux Rider" },
-{ "credits_h1", "World Challenge" },
-{ "credits_text", "http://www.barlow~server.fr" },
-{ "credits_text_small", "(Sources are available there)" },
-{ "credits_text", "" },
-{ "credits_text", "Adapted from" },
-{ "credits_text", "the open-source project" },
-{ "credits_text", "Tux Racer" },
-{"credits_text", "tuxracer.sourceforge.net" },
-{ "credits_text", "" },
-{ "credits_h2", "Tux Rider World Challenge" },
-{ "credits_h2", "Core Development Team" },
-{ "credits_text", "Emmanuel de Roux" },
-{ "credits_text", "Pedro de Barlow" },
-{ "credits_text", "" },
-{ "credits_h2", "Tux Racer" },
-{ "credits_h2", "Core Development Team" },
-{ "credits_text_small", "(Alphabetical Order)" },
-{ "credits_text", "Patrick \"Pog\" Gilhuly" },
-{ "credits_text", "Eric \"Monster\" Hall" },
-{ "credits_text", "Rick Knowles" },
-{ "credits_text", "Vincent Ma" },
-{ "credits_text", "Jasmin Patry" },
-{ "credits_text", "Mark Riddell" },
-{ "credits_text", "" },
-{ "credits_h2", "Music" },
-{ "credits_text", "The Lames: She said no" },
-{ "credits_text_small", "http://myspace.com/whosthelames" },
-{ "credits_text", "EDY: Gotta work" },
-{ "credits_text_small", "http://myspace.com/edyrap" },
-{ "credits_text", "Cosy Palace: ode a un glacon" },
-{ "credits_text", "Allie Delfau" },
-{ "credits_text", "Raphael Lebas de Lacour" },
-{ "credits_text", "Joseph Toscano" },
-{ "credits_text", "" },
-{ "credits_h2", "Other Data" },
-{ "credits_text", "From Extreme Tux Racer" },
-{ "credits_text", "www.extremetuxracer.com" },
-{ "credits_text", "" },
-{ "credits_h2", "Thanks To:" },
-{ "credits_text", "Frank and Delphine : Zag Skis" },
-{ "credits_text", "Sylvain : furlan snowboard" },
-{ "credits_text", "Lucie : Julbo Eyewear" },
-{ "credits_text", "All Myosotis 3 staff" },
-{ "credits_text", "All Trefle 3 staff" },
-{ "credits_text", "Two little unkown babys" },
-{ "credits_text", "Giuseppe" },
-{ "credits_text", "Flore" },
-{ "credits_text", "Laurent (www.iPhon.fr)" },
-{ "credits_text", "" },
-{ "credits_text_small", "Tux Racer is a trademark" },
-{ "credits_text_small", "of Jasmin F. Patry" },
-{ "credits_text_small", "Tux Racer is copyright" },
-{ "credits_text_small", "1999-2008 Jasmin F. Patry" },
-{ "credits_text", "" },
-{ "credits_text", "" },
-{ "credits_text", "" },
-{ "credits_text", "" },
-{ "credits_text_small", "Krok qd mm" },
+  { "credits_h1", "Tux Racer" },
+  { "credits_h1", "for iOS" },
+  { "credits_text_small", "This program is free software;" },
+  { "credits_text_small", "you can redistribute it and/or" },
+  { "credits_text_small", "modify it under the terms of the" },
+  { "credits_text_small", "GNU General Public License" },
+  { "credits_text", "" },
+  { "credits_text", "Ported from" },
+  { "credits_text", "the open-source project" },
+  { "credits_text", "Tux Racer" },
+  {"credits_text", "tuxracer.sourceforge.net" },
+  { "credits_text", "" },
+  { "credits_h2", "iPhone port:" },
+  { "credits_text", "Emmanuel de Roux" },
+  { "credits_text", "Pedro de Barlow" },
+  { "credits_text", "" },
+  { "credits_h2", "Currently maintained by:" },
+  { "credits_text", "Felix Jankowski" },  
+  { "credits_text", "" },
+  { "credits_h2", "Special Thanks to:" },
+  { "credits_text", "Lucas Clemente" },  
+  { "credits_text", "" },
+  { "credits_h2", "Tux Racer" },
+  { "credits_h2", "Core Development Team" },
+  { "credits_text_small", "(Alphabetical Order)" },
+  { "credits_text", "Patrick \"Pog\" Gilhuly" },
+  { "credits_text", "Eric \"Monster\" Hall" },
+  { "credits_text", "Rick Knowles" },
+  { "credits_text", "Vincent Ma" },
+  { "credits_text", "Jasmin Patry" },
+  { "credits_text", "Mark Riddell" },
+  { "credits_text", "" },
+  { "credits_h2", "Music" },
+  { "credits_text", "The Lames: She said no" },
+  { "credits_text_small", "http://myspace.com/whosthelames" },
+  { "credits_text", "EDY: Gotta work" },
+  { "credits_text_small", "http://myspace.com/edyrap" },
+  { "credits_text", "Cosy Palace: ode a un glacon" },
+  { "credits_text", "Allie Delfau" },
+  { "credits_text", "Raphael Lebas de Lacour" },
+  { "credits_text", "Joseph Toscano" },
+  { "credits_text", "" },
+  { "credits_text", "" },
+  { "credits_text_small", "Tux Racer is a trademark" },
+  { "credits_text_small", "of Jasmin F. Patry" },
+  { "credits_text", "" },
+  { "credits_text", "" },
+  { "credits_text", "" },
+  { "credits_text", "" },
+  { "credits_text", "" },
+  { "credits_text", "" },
+  { "credits_h1", "In memory of" },
+  { "credits_h2", "Emmanuel de Roux" },
+  { "credits_h2", "+ 17.04.2010  " },
+  { "credits_text", "" },
+  { "credits_text", "" },
+  { "credits_text", "" },  
+  { "credits_text", "" },
+  { "credits_text", "" },
+  { "credits_text", "" },
+  { "credits_text_small", "Version 1.0, 10.01.2011, Felix Jankowski" },
 };
 
 static scalar_t y_offset = 0;
@@ -124,8 +126,8 @@ static scalar_t y_offset = 0;
  */
 static void go_back() 
 {
-    set_game_mode( GAME_TYPE_SELECT );
-    winsys_post_redisplay();
+  set_game_mode( GAME_TYPE_SELECT );
+  winsys_post_redisplay();
 }
 
 
@@ -138,9 +140,9 @@ static void go_back()
  */
 void mouse_cb( int button, int state, int x, int y )
 {
-    if ( state == WS_MOUSE_DOWN ) {
-        go_back();
-    }
+  if ( state == WS_MOUSE_DOWN ) {
+    go_back();
+  }
 }
 
 
@@ -153,241 +155,241 @@ void mouse_cb( int button, int state, int x, int y )
  */
 static void draw_credits_text( scalar_t time_step )
 {
-    int w = getparam_x_resolution();
-    int h = getparam_y_resolution();
-    font_t *font;
-    int i;
-    scalar_t y;
-    int string_w, asc, desc;
+  int w = getparam_x_resolution();
+  int h = getparam_y_resolution();
+  font_t *font;
+  int i;
+  scalar_t y;
+  int string_w, asc, desc;
+  
+  y_offset += time_step * 30;
+  y = CREDITS_MIN_Y+y_offset;
+  
+  glPushMatrix();
+  {
+    glTranslatef( w/2, y, 0 );
     
-    y_offset += time_step * 30;
-    y = CREDITS_MIN_Y+y_offset;
-    
-    glPushMatrix();
-    {
-        glTranslatef( w/2, y, 0 );
+    for (i=0; i<sizeof( credit_lines ) / sizeof( credit_lines[0] ); i++) {
+      credit_line_t line = credit_lines[i];
+      
+      if ( !get_font_binding( line.binding, &font ) ) {
+        print_warning( IMPORTANT_WARNING,
+                      "Couldn't get font for binding %s", 
+                      line.binding );
+      } else {
+        get_font_metrics( font, line.text, &string_w, &asc, &desc );
         
-        for (i=0; i<sizeof( credit_lines ) / sizeof( credit_lines[0] ); i++) {
-            credit_line_t line = credit_lines[i];
-            
-            if ( !get_font_binding( line.binding, &font ) ) {
-                print_warning( IMPORTANT_WARNING,
-                              "Couldn't get font for binding %s", 
-                              line.binding );
-            } else {
-                get_font_metrics( font, line.text, &string_w, &asc, &desc );
-                
-                glTranslatef( 0, -asc, 0 );
-                y += -asc;
-                
-                glPushMatrix();
-                {
-                    bind_font_texture( font );
-                    glTranslatef( -string_w/2, 0, 0 );
-                    draw_string( font, line.text );
-                }
-                glPopMatrix();
-                
-                glTranslatef( 0, -desc, 0 );
-                y += -desc;
-            }
+        glTranslatef( 0, -asc, 0 );
+        y += -asc;
+        
+        glPushMatrix();
+        {
+          bind_font_texture( font );
+          glTranslatef( -string_w/2, 0, 0 );
+          draw_string( font, line.text );
         }
+        glPopMatrix();
         
-    }
-    glPopMatrix();
-    
-    if ( y > h+CREDITS_MAX_Y ) {
-        y_offset = 0;
+        glTranslatef( 0, -desc, 0 );
+        y += -desc;
+      }
     }
     
-    /* Draw strips at the top and bottom to clip out text */
-    glDisable( GL_TEXTURE_2D );
-    
-    
+  }
+  glPopMatrix();
+  
+  if ( y > h+CREDITS_MAX_Y ) {
+    y_offset = 0;
+  }
+  
+  /* Draw strips at the top and bottom to clip out text */
+  glDisable( GL_TEXTURE_2D );
+  
+  
 #ifdef __APPLE__DISABLED__
 	glColor4f( ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, ui_background_colour.a );
-    
-    //draws rect a la place de glRectf
-    const GLfloat vertices []=
-    {
-        0, 0,
-        w, 0 ,
-        w , CREDITS_MIN_Y,
-        0, CREDITS_MIN_Y
-    };
-    
-    glEnableClientState (GL_VERTEX_ARRAY);
-    glVertexPointer (2, GL_FLOAT , 0, vertices);	
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+  
+  //draws rect a la place de glRectf
+  const GLfloat vertices []=
+  {
+    0, 0,
+    w, 0 ,
+    w , CREDITS_MIN_Y,
+    0, CREDITS_MIN_Y
+  };
+  
+  glEnableClientState (GL_VERTEX_ARRAY);
+  glVertexPointer (2, GL_FLOAT , 0, vertices);	
+  glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 	
-    const GLfloat vertices1 []=
-    {
-        0, CREDITS_MIN_Y,
-        w, CREDITS_MIN_Y,
-        w, CREDITS_MIN_Y + 30,
-        0, CREDITS_MIN_Y + 30
-    };
-    
-    const GLfloat colors1 []=
-    {
-        ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, ui_background_colour.a,
-        ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, ui_background_colour.a,
-        ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, 0.0,
-        ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, 0.0,
-    };
-    
-    glEnableClientState (GL_VERTEX_ARRAY);
-    glVertexPointer (2, GL_FLOAT , 0, vertices);	
-    glColorPointer(4, GL_FLOAT, 0, colors1);
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-    
-    glColor4f( ui_background_colour.r,  ui_background_colour.g, ui_background_colour.b, ui_background_colour.a );
-    
-    //draws rect a la place de glRectf( 0, h+CREDITS_MAX_Y, w, h );
-    const GLfloat vertices2 []=
-    {
-        0, h+CREDITS_MAX_Y,
-        w, h+CREDITS_MAX_Y ,
-        w , h,
-        0, h
-    };
-    
-    glEnableClientState (GL_VERTEX_ARRAY);
-    glVertexPointer (2, GL_FLOAT , 0, vertices2);	
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-    
-    
-    const GLfloat vertices3 []=
-    {
-        w, h+CREDITS_MAX_Y,
-        0, h+CREDITS_MAX_Y,
-        0, h+CREDITS_MAX_Y - 30,
-        w, h+CREDITS_MAX_Y - 30
-    };
-    
-    const GLfloat colors3 []=
-    {
-        ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, ui_background_colour.a,
-        ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, ui_background_colour.a,
-        ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, 0.0,
-        ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, 0.0,
-    };
-    
-    glEnableClientState (GL_VERTEX_ARRAY);
-    glVertexPointer (2, GL_FLOAT , 0, vertices3);	
-    glColorPointer(4, GL_FLOAT, 0, colors3);
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-    
-    
-    
+  const GLfloat vertices1 []=
+  {
+    0, CREDITS_MIN_Y,
+    w, CREDITS_MIN_Y,
+    w, CREDITS_MIN_Y + 30,
+    0, CREDITS_MIN_Y + 30
+  };
+  
+  const GLfloat colors1 []=
+  {
+    ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, ui_background_colour.a,
+    ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, ui_background_colour.a,
+    ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, 0.0,
+    ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, 0.0,
+  };
+  
+  glEnableClientState (GL_VERTEX_ARRAY);
+  glVertexPointer (2, GL_FLOAT , 0, vertices);	
+  glColorPointer(4, GL_FLOAT, 0, colors1);
+  glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+  
+  glColor4f( ui_background_colour.r,  ui_background_colour.g, ui_background_colour.b, ui_background_colour.a );
+  
+  //draws rect a la place de glRectf( 0, h+CREDITS_MAX_Y, w, h );
+  const GLfloat vertices2 []=
+  {
+    0, h+CREDITS_MAX_Y,
+    w, h+CREDITS_MAX_Y ,
+    w , h,
+    0, h
+  };
+  
+  glEnableClientState (GL_VERTEX_ARRAY);
+  glVertexPointer (2, GL_FLOAT , 0, vertices2);	
+  glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+  
+  
+  const GLfloat vertices3 []=
+  {
+    w, h+CREDITS_MAX_Y,
+    0, h+CREDITS_MAX_Y,
+    0, h+CREDITS_MAX_Y - 30,
+    w, h+CREDITS_MAX_Y - 30
+  };
+  
+  const GLfloat colors3 []=
+  {
+    ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, ui_background_colour.a,
+    ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, ui_background_colour.a,
+    ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, 0.0,
+    ui_background_colour.r, ui_background_colour.g, ui_background_colour.b, 0.0,
+  };
+  
+  glEnableClientState (GL_VERTEX_ARRAY);
+  glVertexPointer (2, GL_FLOAT , 0, vertices3);	
+  glColorPointer(4, GL_FLOAT, 0, colors3);
+  glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+  
+  
+  
 #else
-    
-    glColor4dv( (scalar_t*)&ui_background_colour );
-    
-    glRectf( 0, 0, w, CREDITS_MIN_Y );
-    
-    glBegin( GL_QUADS );
-    {
-        glVertex2f( 0, CREDITS_MIN_Y );
-        glVertex2f( w, CREDITS_MIN_Y );
-        glColor4f( ui_background_colour.r, 
-                  ui_background_colour.g,
-                  ui_background_colour.b,
-                  0 );
-        glVertex2f( w, CREDITS_MIN_Y + 30 );
-        glVertex2f( 0, CREDITS_MIN_Y + 30 );
-    }
-    glEnd();
-    
-    glColor4dv( (scalar_t*)&ui_background_colour );
-    
-    glRectf( 0, h+CREDITS_MAX_Y, w, h );
-    
-    glBegin( GL_QUADS );
-    {
-        glVertex2f( w, h+CREDITS_MAX_Y );
-        glVertex2f( 0, h+CREDITS_MAX_Y );
-        glColor4f( ui_background_colour.r, 
-                  ui_background_colour.g,
-                  ui_background_colour.b,
-                  0 );
-        glVertex2f( 0, h+CREDITS_MAX_Y - 30 );
-        glVertex2f( w, h+CREDITS_MAX_Y - 30 );
-    }
-    glEnd();
-    
+  
+  glColor4dv( (scalar_t*)&ui_background_colour );
+  
+  glRectf( 0, 0, w, CREDITS_MIN_Y );
+  
+  glBegin( GL_QUADS );
+  {
+    glVertex2f( 0, CREDITS_MIN_Y );
+    glVertex2f( w, CREDITS_MIN_Y );
+    glColor4f( ui_background_colour.r, 
+              ui_background_colour.g,
+              ui_background_colour.b,
+              0 );
+    glVertex2f( w, CREDITS_MIN_Y + 30 );
+    glVertex2f( 0, CREDITS_MIN_Y + 30 );
+  }
+  glEnd();
+  
+  glColor4dv( (scalar_t*)&ui_background_colour );
+  
+  glRectf( 0, h+CREDITS_MAX_Y, w, h );
+  
+  glBegin( GL_QUADS );
+  {
+    glVertex2f( w, h+CREDITS_MAX_Y );
+    glVertex2f( 0, h+CREDITS_MAX_Y );
+    glColor4f( ui_background_colour.r, 
+              ui_background_colour.g,
+              ui_background_colour.b,
+              0 );
+    glVertex2f( 0, h+CREDITS_MAX_Y - 30 );
+    glVertex2f( w, h+CREDITS_MAX_Y - 30 );
+  }
+  glEnd();
+  
 #endif
-    
-    glColor4f( 1, 1, 1, 1 );
-    
-    glEnable( GL_TEXTURE_2D );
+  
+  glColor4f( 1, 1, 1, 1 );
+  
+  glEnable( GL_TEXTURE_2D );
 }
 
 static void credits_init(void) 
 {
-    winsys_set_display_func( main_loop );
-    winsys_set_idle_func( main_loop );
-    winsys_set_reshape_func( reshape );
-    winsys_set_mouse_func( mouse_cb );
-    winsys_set_motion_func( ui_event_motion_func );
-    winsys_set_passive_motion_func( ui_event_motion_func );
-    
-    y_offset = 0;
-    
-    play_music( "credits_screen" );
+  winsys_set_display_func( main_loop );
+  winsys_set_idle_func( main_loop );
+  winsys_set_reshape_func( reshape );
+  winsys_set_mouse_func( mouse_cb );
+  winsys_set_motion_func( ui_event_motion_func );
+  winsys_set_passive_motion_func( ui_event_motion_func );
+  
+  y_offset = 0;
+  
+  play_music( "credits_screen" );
 }
 
 static void credits_loop( scalar_t time_step )
 {
-    int width, height;
-    width = getparam_x_resolution();
-    height = getparam_y_resolution();
-    
-    check_gl_error();
-    
-    update_audio();
-    
-    clear_rendering_context();
-    
-    set_gl_options( GUI );
-    
-    ui_setup_display();
-    
-    draw_credits_text( time_step );
-    
-    if (getparam_ui_snow()) {
-        update_ui_snow( time_step, False );
-        draw_ui_snow();
-    }
-    
-    ui_draw_menu_decorations();
-    
-    ui_draw();
-    
-    reshape( width, height );
-    
-    winsys_swap_buffers();
+  int width, height;
+  width = getparam_x_resolution();
+  height = getparam_y_resolution();
+  
+  check_gl_error();
+  
+  update_audio();
+  
+  clear_rendering_context();
+  
+  set_gl_options( GUI );
+  
+  ui_setup_display();
+  
+  draw_credits_text( time_step );
+  
+  if (getparam_ui_snow()) {
+    update_ui_snow( time_step, False );
+    draw_ui_snow();
+  }
+  
+  ui_draw_menu_decorations();
+  
+  ui_draw();
+  
+  reshape( width, height );
+  
+  winsys_swap_buffers();
 } 
 
 START_KEYBOARD_CB( credits_key_cb )
 {
-    if ( !release ) {
-        go_back();
-    }
+  if ( !release ) {
+    go_back();
+  }
 }
 END_KEYBOARD_CB
 
 void credits_register()
 {
-    int status = 0;
-    
-    status |= add_keymap_entry( CREDITS, 
-                               DEFAULT_CALLBACK, 
-                               NULL, NULL, credits_key_cb );
-    
-    check_assertion( status == 0, "out of keymap entries" );
-    
-    register_loop_funcs( CREDITS, credits_init, credits_loop, NULL );
+  int status = 0;
+  
+  status |= add_keymap_entry( CREDITS, 
+                             DEFAULT_CALLBACK, 
+                             NULL, NULL, credits_key_cb );
+  
+  check_assertion( status == 0, "out of keymap entries" );
+  
+  register_loop_funcs( CREDITS, credits_init, credits_loop, NULL );
 }
 
 

@@ -249,8 +249,8 @@
 		631350130F0E733400E94AF7 /* how_to_play.html in Resources */ = {isa = PBXBuildFile; fileRef = 631350110F0E733400E94AF7 /* how_to_play.html */; };
 		632B513B0F2230F900A22BB8 /* racing_mode_select.c in Sources */ = {isa = PBXBuildFile; fileRef = 632B51390F2230F900A22BB8 /* racing_mode_select.c */; };
 		632B513C0F2230F900A22BB8 /* racing_mode_select.c in Sources */ = {isa = PBXBuildFile; fileRef = 632B51390F2230F900A22BB8 /* racing_mode_select.c */; };
-		8C08276B12B5A0AD0002CBA5 /* libtcl8.6-42.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C08276A12B5A0AD0002CBA5 /* libtcl8.6-42.a */; };
-		8C26C55F12D684B6003633FB /* libtcl8.6-iPhoneSim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C26C55E12D684B6003633FB /* libtcl8.6-iPhoneSim.a */; };
+		8C04ED3B12D6E09700A09B1C /* libtcl8.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04ED3A12D6E09700A09B1C /* libtcl8.6.a */; };
+		8C4A518412DA0F0E008E5F9F /* libtcl8.6-iPhoneSim.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C26C55E12D684B6003633FB /* libtcl8.6-iPhoneSim.a */; };
 		8CA3F52E12B5423B00C382A2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA3F52D12B5423B00C382A2 /* libz.dylib */; };
 		8CDB4BCC12D65F5C00E21C35 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDB4BCB12D65F5C00E21C35 /* MediaPlayer.framework */; };
 		8CDB4BE812D65FCC00E21C35 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDB4BE712D65FCC00E21C35 /* AVFoundation.framework */; };
@@ -482,7 +482,7 @@
 		637B9CC00EE1BA5900605E02 /* Tux Racer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tux Racer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		637B9CC20EE1BA5900605E02 /* Tux Racer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tux Racer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63894B7B0EAFDFAD00A575FF /* iphonegl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iphonegl.h; sourceTree = "<group>"; };
-		8C08276A12B5A0AD0002CBA5 /* libtcl8.6-42.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libtcl8.6-42.a"; sourceTree = "<group>"; };
+		8C04ED3A12D6E09700A09B1C /* libtcl8.6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtcl8.6.a; sourceTree = "<group>"; };
 		8C26C55E12D684B6003633FB /* libtcl8.6-iPhoneSim.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libtcl8.6-iPhoneSim.a"; sourceTree = "<group>"; };
 		8CA3F52D12B5423B00C382A2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = "<absolute>"; };
 		8CDB4BCB12D65F5C00E21C35 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -501,8 +501,8 @@
 				28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */,
 				32197A2A0EB687630077F189 /* AudioToolbox.framework in Frameworks */,
 				3260774B0EF0A3D9004D6A77 /* CoreGraphics.framework in Frameworks */,
-				8C08276B12B5A0AD0002CBA5 /* libtcl8.6-42.a in Frameworks */,
 				8CDB4C5012D6650E00E21C35 /* AVFoundation.framework in Frameworks */,
+				8C04ED3B12D6E09700A09B1C /* libtcl8.6.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +519,7 @@
 				8CA3F52E12B5423B00C382A2 /* libz.dylib in Frameworks */,
 				8CDB4BCC12D65F5C00E21C35 /* MediaPlayer.framework in Frameworks */,
 				8CDB4BE812D65FCC00E21C35 /* AVFoundation.framework in Frameworks */,
-				8C26C55F12D684B6003633FB /* libtcl8.6-iPhoneSim.a in Frameworks */,
+				8C4A518412DA0F0E008E5F9F /* libtcl8.6-iPhoneSim.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,7 +684,7 @@
 		32A374170EC5C32100142BBA /* device */ = {
 			isa = PBXGroup;
 			children = (
-				8C08276A12B5A0AD0002CBA5 /* libtcl8.6-42.a */,
+				8C04ED3A12D6E09700A09B1C /* libtcl8.6.a */,
 			);
 			name = device;
 			sourceTree = "<group>";
@@ -1229,9 +1229,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_OPENMP_SUPPORT = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include/**";
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				LD_OPENMP_FLAGS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1251,9 +1251,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_OPENMP_SUPPORT = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include/**";
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				LD_OPENMP_FLAGS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1272,7 +1272,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include/";
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -1292,7 +1292,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include/**";
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -1323,12 +1323,13 @@
 				GCC_WARN_SHADOW = NO;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 2.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "$(TUXRIDER_EXTRA_CFLAGS)";
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "10512AE3-EDBE-4EA1-9860-129AA6AA9E31";
-				SDKROOT = iphoneos4.2;
+				SDKROOT = iphoneos;
 				SEPARATE_STRIP = YES;
 				TUXRIDER_BIC_ID = v1.1;
 				TUXRIDER_EXTRA_CFLAGS = "-DTUXRIDER_ROOT_SERVER=@\\\"$(TUXRIDER_ROOT_SERVER)/\\\" -DTUXRIDER_BIC_ID=\\\"$(TUXRIDER_BIC_ID)\\\" -DTUXRIDER_VAR_ID=\\\"$(TUXRIDER_VAR_ID)\\\" -DTUXRIDER_TOC=$(TUXRIDER_TOC)";
@@ -1345,9 +1346,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_OPENMP_SUPPORT = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include/**";
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				LD_OPENMP_FLAGS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1366,7 +1367,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include/";
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -1397,12 +1398,13 @@
 				GCC_WARN_SHADOW = NO;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 2.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "$(TUXRIDER_EXTRA_CFLAGS)";
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "10512AE3-EDBE-4EA1-9860-129AA6AA9E31";
-				SDKROOT = iphoneos4.2;
+				SDKROOT = iphoneos;
 				SEPARATE_STRIP = YES;
 				TUXRIDER_BIC_ID = v1.1;
 				TUXRIDER_EXTRA_CFLAGS = "-DTUXRIDER_ROOT_SERVER=@\\\"$(TUXRIDER_ROOT_SERVER)/\\\" -DTUXRIDER_BIC_ID=\\\"$(TUXRIDER_BIC_ID)\\\" -DTUXRIDER_VAR_ID=\\\"$(TUXRIDER_VAR_ID)\\\" -DTUXRIDER_TOC=$(TUXRIDER_TOC)";
@@ -1419,9 +1421,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_OPENMP_SUPPORT = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include/**";
 				INFOPLIST_FILE = Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				LD_OPENMP_FLAGS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1440,7 +1442,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include/";
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -1471,6 +1473,7 @@
 				GCC_WARN_SHADOW = NO;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 2.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
@@ -1479,7 +1482,7 @@
 				);
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "10512AE3-EDBE-4EA1-9860-129AA6AA9E31";
-				SDKROOT = iphoneos4.2;
+				SDKROOT = iphoneos;
 				STRIP_STYLE = all;
 				TUXRIDER_BIC_ID = v1.1;
 				TUXRIDER_EXTRA_CFLAGS = "-DTUXRIDER_ROOT_SERVER=@\\\"$(TUXRIDER_ROOT_SERVER)/\\\" -DTUXRIDER_BIC_ID=\\\"$(TUXRIDER_BIC_ID)\\\" -DTUXRIDER_VAR_ID=\\\"$(TUXRIDER_VAR_ID)\\\" -DTUXRIDER_TOC=$(TUXRIDER_TOC)";
@@ -1505,12 +1508,13 @@
 				GCC_WARN_SHADOW = NO;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 2.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "$(TUXRIDER_EXTRA_CFLAGS)";
 				PREBINDING = NO;
 				PROVISIONING_PROFILE = "10512AE3-EDBE-4EA1-9860-129AA6AA9E31";
-				SDKROOT = iphoneos4.2;
+				SDKROOT = iphoneos;
 				SEPARATE_STRIP = YES;
 				TUXRIDER_BIC_ID = v1.1;
 				TUXRIDER_EXTRA_CFLAGS = "-DTUXRIDER_ROOT_SERVER=@\\\"$(TUXRIDER_ROOT_SERVER)/\\\" -DTUXRIDER_BIC_ID=\\\"$(TUXRIDER_BIC_ID)\\\" -DTUXRIDER_VAR_ID=\\\"$(TUXRIDER_VAR_ID)\\\" -DTUXRIDER_TOC=$(TUXRIDER_TOC)";
