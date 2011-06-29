@@ -364,7 +364,7 @@ void qglDrawElements (GLenum mode, GLsizei count, GLenum type, const GLvoid *ind
             }
             else
             {
-                  TGLErr("WARNING: %d is too big for %d\n", idealValue, maxBufferSize);
+                  TGLErr("WARNING: %d is too big for %ld\n", idealValue, maxBufferSize);
             }
         } else if(idealValue <= minBufferSize)
         {
@@ -384,10 +384,10 @@ void qglDrawElements (GLenum mode, GLsizei count, GLenum type, const GLvoid *ind
 //            assert((int)val - (int)currentPos >= 0);
             int newVal = (int)val - (int)newPos;
             if(newVal >= newWindowSize) {
-                TGLErr("WARNING: %d is too big for %d (of %d where windowSize:%d)\n", val, newPos - val - newWindowSize, newWindowSize);
+                TGLErr("WARNING: %d is too big for %d (where windowSize:%d)\n", val, newPos - val - newWindowSize, newWindowSize);
                 ushortPtr[i] = 0;
             } else if (newVal < 0) {
-                TGLErr("WARNING: %d is too small for %d (of %d where windowSize:%d)\n", val, newPos - val, newWindowSize);
+                TGLErr("WARNING: %d is too small for %d (where windowSize:%d)\n", val, newPos - val, newWindowSize);
                 ushortPtr[i] = 0;
             } else
                 ushortPtr[i] = (GLushort)newVal;

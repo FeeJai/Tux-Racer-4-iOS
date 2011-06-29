@@ -158,7 +158,7 @@ glutSolidSphere(GLfloat radius, GLint slices, GLint stacks)
 		v = (GLfloat*)malloc(stacks*(slices+1)*2*3*sizeof *v);
 		n = (GLfloat*)malloc(stacks*(slices+1)*2*3*sizeof *n);
 
-     TRDebugLog("Computing sphere\n");
+     //TRDebugLog("Computing sphere\n");
 		PlotSpherePoints(radius, stacks, slices, v, n);
 	}
 

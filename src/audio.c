@@ -441,6 +441,8 @@ static void get_music_context_data( char *music_context, Mix_Music **music,
 */
 bool_t play_sound( char *sound_context, int loop )
 {
+    DPRINTF("play_sound : %s\n",sound_context);
+
     Mix_Chunk *chunk;
     sound_context_data_t *data;
 
@@ -874,7 +876,12 @@ bool_t stop_music( void )
 
 bool_t play_sound( char *sound_context )
 {
+    
 	bool_t isSystemSound = isSSFromContext(sound_context);
+    
+    DPRINTF("play_sound : %s system sound: %s\n",sound_context, (isSystemSound)?"true":"false");
+
+    
 	playIphoneSound(sound_context,isSystemSound);
     return False;
 }

@@ -118,7 +118,7 @@ static const int kTRPreferencesVersion = 3;
     if ([prefs objectForKey:@"yetUpdatedOnce"]==nil || [[prefs objectForKey:@"version"] intValue] < kTRPreferencesVersion) {
         [prefs setObject:@"yetUpdated" forKey:@"yetUpdatedOnce"];
         [prefs setFloat:0.5 forKey:@"musicVolume"];
-        [prefs setFloat:0.5 forKey:@"soundsVolume"];
+        [prefs setFloat:0.25 forKey:@"soundsVolume"];
         if(![prefs valueForKey:@"username"]) [prefs setValue:@"" forKey:@"username"];
         if(![prefs valueForKey:@"password"]) [prefs setValue:@"" forKey:@"password"];
         if(![prefs valueForKey:@"pays"]) [prefs setValue:@"" forKey:@"pays"];
@@ -338,7 +338,7 @@ static const int kTRPreferencesVersion = 3;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     TRDebugLog("%s selected !\n",[[[tableView cellForRowAtIndexPath:indexPath] text] UTF8String]);
-    [pays setTitle:[[tableView cellForRowAtIndexPath:indexPath] text] forState:UIControlStateNormal];
+    [pays setTitle:[[[tableView cellForRowAtIndexPath:indexPath] textLabel] text] forState:UIControlStateNormal];
     [self listCountriesTransition:nil];
 }
 

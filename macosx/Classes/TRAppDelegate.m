@@ -39,6 +39,7 @@ void turnScreenToLandscape() {
     view.transform = transform;
     
     // Repositions and resizes the view.
+    //TODO: Retina display and iPad support
     CGRect contentRect = CGRectMake(-80, 80, 480, 320);
     view.bounds = contentRect;
 
@@ -145,10 +146,7 @@ static id sharedAppDelegate = nil;
 	[glView startAnimation];
     
     //hiddes status bar
-    if([[UIApplication sharedApplication] respondsToSelector:@selector(setStatusBarHidden: withAnimation:)])
-        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
-    else 
-        [[UIApplication sharedApplication] setStatusBarHidden:YES animated:YES];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
 	
     //places glView into the transitionView
 	CGRect glViewFrame = glView.frame;
