@@ -145,7 +145,10 @@ static id sharedAppDelegate = nil;
 	[glView startAnimation];
     
     //hiddes status bar
-	[application setStatusBarHidden:TRUE animated:TRUE];
+    if([[UIApplication sharedApplication] respondsToSelector:@selector(setStatusBarHidden: withAnimation:)])
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    else 
+        [[UIApplication sharedApplication] setStatusBarHidden:YES animated:YES];
 	
     //places glView into the transitionView
 	CGRect glViewFrame = glView.frame;
