@@ -258,13 +258,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		01AE27F213B8D4E000D84B43 /* tcl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tcl.h; sourceTree = "<group>"; };
-		01AE27F313B8D4E000D84B43 /* tclDecls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tclDecls.h; sourceTree = "<group>"; };
-		01AE27F413B8D4E000D84B43 /* tclOO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tclOO.h; sourceTree = "<group>"; };
-		01AE27F513B8D4E000D84B43 /* tclOODecls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tclOODecls.h; sourceTree = "<group>"; };
-		01AE27F613B8D4E000D84B43 /* tclPlatDecls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tclPlatDecls.h; sourceTree = "<group>"; };
-		01AE27F713B8D4E000D84B43 /* tclTomMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tclTomMath.h; sourceTree = "<group>"; };
-		01AE27F813B8D4E000D84B43 /* tclTomMathDecls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tclTomMathDecls.h; sourceTree = "<group>"; };
+		01B796C113BB909400DD876B /* tcl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tcl.h; sourceTree = "<group>"; };
+		01B796C213BB909400DD876B /* tclDecls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tclDecls.h; sourceTree = "<group>"; };
+		01B796C313BB909400DD876B /* tclOO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tclOO.h; sourceTree = "<group>"; };
+		01B796C413BB909400DD876B /* tclOODecls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tclOODecls.h; sourceTree = "<group>"; };
+		01B796C513BB909400DD876B /* tclPlatDecls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tclPlatDecls.h; sourceTree = "<group>"; };
+		01B796C613BB909400DD876B /* tclTomMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tclTomMath.h; sourceTree = "<group>"; };
+		01B796C713BB909400DD876B /* tclTomMathDecls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tclTomMathDecls.h; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* TRAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* TRAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRAppDelegate.m; sourceTree = "<group>"; };
@@ -533,20 +533,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01AE27F113B8D4E000D84B43 /* include */ = {
+		01B796C013BB909400DD876B /* include */ = {
 			isa = PBXGroup;
 			children = (
-				01AE27F213B8D4E000D84B43 /* tcl.h */,
-				01AE27F313B8D4E000D84B43 /* tclDecls.h */,
-				01AE27F413B8D4E000D84B43 /* tclOO.h */,
-				01AE27F513B8D4E000D84B43 /* tclOODecls.h */,
-				01AE27F613B8D4E000D84B43 /* tclPlatDecls.h */,
-				01AE27F713B8D4E000D84B43 /* tclTomMath.h */,
-				01AE27F813B8D4E000D84B43 /* tclTomMathDecls.h */,
+				01B796C113BB909400DD876B /* tcl.h */,
+				01B796C213BB909400DD876B /* tclDecls.h */,
+				01B796C313BB909400DD876B /* tclOO.h */,
+				01B796C413BB909400DD876B /* tclOODecls.h */,
+				01B796C513BB909400DD876B /* tclPlatDecls.h */,
+				01B796C613BB909400DD876B /* tclTomMath.h */,
+				01B796C713BB909400DD876B /* tclTomMathDecls.h */,
 			);
 			name = include;
-			path = ../../include;
-			sourceTree = SOURCE_ROOT;
+			path = ../include;
+			sourceTree = "<group>";
 		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
@@ -586,7 +586,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				01AE27F113B8D4E000D84B43 /* include */,
+				01B796C013BB909400DD876B /* include */,
 				32B969240EAFB7BE007977C1 /* src */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -1357,7 +1357,7 @@
 				GCC_WARN_SHADOW = NO;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include/**";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../include/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
@@ -1393,7 +1393,7 @@
 				GCC_WARN_SHADOW = NO;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../include/**";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../include/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "$(TUXRIDER_EXTRA_CFLAGS)";
