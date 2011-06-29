@@ -14,13 +14,3 @@ int main(int argc, char *argv[]) {
     [pool release];
     return retVal;
 }
-
-//Bugfix for Snow Leopard
-
-/*
-
-FILE *fdopen$UNIX2003(int fildes, const char *mode) {
-  return fdopen(fildes, mode);
-}
-
-*/
