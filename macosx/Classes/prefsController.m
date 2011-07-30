@@ -355,11 +355,6 @@ static const int kTRPreferencesVersion = 3;
     return [filteredListContent count];
 }
 
-- (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    return UITableViewCellAccessoryNone;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellID"];
@@ -369,6 +364,7 @@ static const int kTRPreferencesVersion = 3;
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     }
     
+    cell.accessoryType = UITableViewCellAccessoryNone;
     cell.text = [filteredListContent objectAtIndex:indexPath.row];
     
     return cell;
