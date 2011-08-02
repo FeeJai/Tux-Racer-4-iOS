@@ -24,10 +24,15 @@ extern "C" {
     void alertRegisterNeeded(void);
      
     /* implémentées dans scoresController */
+    
+    /*
+     
     void saveScoreOnlineAfterRace(char* raceName,int score,int herring,int minutes,int seconds,int hundredths);
     void displayRankingsAfterRace(char* raceName,int score,int herring,int minutes,int seconds,int hundredths);
     void displaySlopes(void);
     void dirtyScores (void);
+    
+    */
     
     /* //implémentées dans TRAccelerometterDelegate */
     double accelerometerTurnFact(void);

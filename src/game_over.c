@@ -58,7 +58,7 @@ static void mouse_cb( int button, int state, int x, int y )
 #ifdef __APPLE__
     if (g_game.practicing && !g_game.race_aborted && g_game.race.name!=NULL && did_player_beat_best_results()  && g_game.rankings_displayed==false) {
         //Notify that a new best result is for the moment unsaved
-        dirtyScores();
+        //dirtyScores();
     }
     
     if (!did_player_beat_best_results() && !plyrWantsToDisplayRankingsAfterRace()) {
@@ -393,7 +393,6 @@ void saveAndDisplayRankings() {
         get_time_components( g_game.time, &minutes, &seconds, &hundredths);
         //if the player choosed in his prefs not to save score online after ending a race but just to display rankings, the function below
         //will detect this case and redirect to the function displayRankingsAfterRace
-        saveScoreOnlineAfterRace(g_game.race.name,plyr->score,plyr->herring,minutes,seconds,hundredths);
     } 
     //else display world rankings for this score
     else if (g_game.practicing && !g_game.race_aborted && g_game.race.name!=NULL && !did_player_beat_best_results()) {
@@ -402,7 +401,6 @@ void saveAndDisplayRankings() {
         int hundredths;
         player_data_t *plyr = get_player_data( local_player() );
         get_time_components( g_game.time, &minutes, &seconds, &hundredths);
-        displayRankingsAfterRace(g_game.race.name,plyr->score,plyr->herring,minutes,seconds,hundredths);
     }
 }
 #endif
@@ -514,7 +512,7 @@ START_KEYBOARD_CB( game_over_cb )
     
     if (g_game.practicing && !g_game.race_aborted && g_game.race.name!=NULL && did_player_beat_best_results()  && g_game.rankings_displayed==false) {
         //Notify that a new best result is for the moment unsaved
-        dirtyScores();
+        //dirtyScores();
     }
     
     if (!did_player_beat_best_results() && !plyrWantsToDisplayRankingsAfterRace()) {

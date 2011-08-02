@@ -324,7 +324,7 @@ void winsys_show_preferences( void )
  */
 void winsys_show_rankings( void )
 {
-    displaySlopes();
+    //displaySlopes();
 }
 
 /*---------------------------------------------------------------------------*/

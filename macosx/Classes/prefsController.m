@@ -13,7 +13,6 @@
 #import "myHTTPErrors.h"
 #import "ConnectionController.h"
 #import "multiplayer.h"
-#import "TRFriendsManagerDelegate.h"
 
 bool plyrWantsToSaveOrDisplayRankingsAfterRace() {
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
@@ -203,9 +202,11 @@ static const int kTRPreferencesVersion = 3;
 	}
 	// If view 1 is already a subview of the transition view replace it with view 2, and vice-versa.
 	if([prefsWindow superview]) {
+        /*
         [[TRFriendsManagerDelegate sharedFriendManager] setEditMode:YES animated:NO];
         [[TRFriendsManagerDelegate sharedFriendManager] setBackTarget:self];
         [[TRFriendsManagerDelegate sharedFriendManager] setBackSelector:_cmd];
+        */
 		[transitionWindow replaceSubview:prefsWindow withSubview:friendsManagerWindow transition:kCATransitionPush direction:kCATransitionFromRight duration:0.50];
 	} else {
 		[transitionWindow replaceSubview:friendsManagerWindow withSubview:prefsWindow transition:kCATransitionPush direction:kCATransitionFromLeft duration:0.50];
@@ -324,14 +325,14 @@ static const int kTRPreferencesVersion = 3;
     {
         ConnectionController* conn = [[[ConnectionController alloc] init] autorelease];
         NSString* queryString = [NSString stringWithFormat:@"login=%@&mdp1=%@&mdp2=%@&pays=%@",[RegLogin text],[RegMdp1 text],[RegMdp2 text],[RegPays titleForState:UIControlStateNormal]];
-        [conn postRequest:queryString atURL:[tuxRiderRootServer stringByAppendingString:@"suscribe.php"] withWaitMessage:NSLocalizedString(@"Sending registration data...",@"Classes/prefsController.m") sendResponseTo:self withMethod:@selector(treatError:)];
+        //[conn postRequest:queryString atURL:[tuxRiderRootServer stringByAppendingString:@"suscribe.php"] withWaitMessage:NSLocalizedString(@"Sending registration data...",@"Classes/prefsController.m") sendResponseTo:self withMethod:@selector(treatError:)];
     } else [self treatError:[NSString stringWithFormat:@"%d",error]];
 }
 
 - (void)login {
     ConnectionController* conn = [[[ConnectionController alloc] init] autorelease];
     NSString* queryString = [NSString stringWithFormat:@"login=%@&mdp=%@",[login text],[mdp text]];
-    [conn postRequest:queryString atURL:[tuxRiderRootServer stringByAppendingString:@"login.php"] withWaitMessage:NSLocalizedString(@"Checking login/password...",@"Classes/prefsController.m") sendResponseTo:self withMethod:@selector(treatError:)];
+    //[conn postRequest:queryString atURL:[tuxRiderRootServer stringByAppendingString:@"login.php"] withWaitMessage:NSLocalizedString(@"Checking login/password...",@"Classes/prefsController.m") sendResponseTo:self withMethod:@selector(treatError:)];
 }
 
 #pragma mark tableView delegate

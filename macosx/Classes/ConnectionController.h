@@ -2,8 +2,6 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "prefsController.h"
 
-extern NSString * tuxRiderRootServer;
-
 @interface ConnectionController : NSObject {
     NSMutableData *_responseData;
     UIAlertView* _alertMessage;
