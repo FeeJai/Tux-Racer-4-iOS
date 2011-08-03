@@ -9,7 +9,7 @@
 *~.nib/
 build/*
 
-xcuserdata
+macosx/*.xcodeproj/xcuserdata/*
 
 
 # Textmate - if you build your xcode projects with it
