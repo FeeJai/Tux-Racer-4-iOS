@@ -19,3 +19,5 @@ build/*
 .DS_Store
 profile
 macosx/tuxracer.xcodeproj/xcuserdata/feejai.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist
+
+macosx/tuxracer.xcodeproj/project.xcworkspace/xcuserdata/feejai.xcuserdatad/UserInterfaceState.xcuserstate
