@@ -71,13 +71,13 @@ tux_open_courses [concat \
         -course bunny_hill -name "Bunny Hill" \
             -description "Use clever turning to conquer the Bunny Hill." \
                     -par_time 40.0 \
-                    -conditions sunny -no_speed \
+                    -conditions sunny -no_speed -is_demo \
     } \
     { \
         -course frozen_river -name "Frozen River" \
             -description "Don't get stuck in the Frozen River !" \
                     -par_time 80.0 \
-                    -conditions sunny \
+                    -conditions sunny -is_demo\
     } \
     { \
         -course twisty_slope -name "Twisty Slope" \
@@ -93,13 +93,13 @@ tux_open_courses [concat \
     { \
         -course penguins_cant_fly -name "Flying Penguins" \
             -description "Go fast, and try to keep a bit of control to catch herrings !" \
-                    -par_time 120.0 \
+                    -par_time 120.0 -is_demo \
     } \
     { \
         -course slippy_slidey -name "Slippy Slidey" \
             -description "Choose your way to be the best !" \
                     -par_time 120.0 \
-                    -conditions sunny -no_score \
+                    -conditions sunny -no_score -is_demo \
     } \
     { \
         -course chinese_wall -name "Chinese Wall" \

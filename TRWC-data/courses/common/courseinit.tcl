@@ -28,9 +28,13 @@ tux_tree_props -name tree2 -diameter 1.4 -height 2.5 \
       -texture tree_barren -colour {255 96 0} -polyhedron $tree_poly \
       -size_varies 0.5 
 
-tux_load_texture flag1 items/flag.rgb 0
-tux_item_spec -name flag -diameter 1.0 -height 1.0 \
+tux_load_texture flag1 items/flag_zag.rgb 0
+tux_item_spec -name flag_zag -diameter 1.0 -height 1.0 \
       -texture flag1 -colour {194 40 40} -nocollision
+
+tux_load_texture flag2 items/flag_furlan.rgb 0
+tux_item_spec -name flag_furlan -diameter 1.0 -height 1.0 \
+      -texture flag2 -colour {4 48 40} -nocollision
       
 tux_load_texture finish items/finish.rgb 0
 tux_item_spec -name finish -diameter 9.0 -height 6.0 \
