@@ -7419,7 +7419,7 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>334073932.31269097</real>
+		<real>334074127.60034698</real>
 		<string>{0, 1049}</string>
 		<string>{6782, 0}</string>
 		<dict>
@@ -8946,7 +8946,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>334069452.89747101</real>
+		<real>334074122.67132097</real>
 		<string>{0, 915}</string>
 		<dict>
 			<key>$class</key>
@@ -15509,7 +15509,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>334073932.31339198</real>
+		<real>334074127.601367</real>
 		<string>{0, 1049}</string>
 		<string>{6782, 0}</string>
 		<string>draw_credits_text()</string>

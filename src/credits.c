@@ -75,8 +75,8 @@ static credit_line_t credit_lines[] =
     { "credits_h2", "Currently maintained by:" },
     { "credits_text", "Felix Jankowski" },
     { "credits_text", "" },
-    { "credits_h2", "Launchscreen graphics:" },
-    { "credits_text", "Bodo Graumann" },  
+    { "credits_h2", "Graphic design:" },
+    { "credits_text", "Lizzy Maria van Camp" },  
     { "credits_text", "" },
     { "credits_h2", "Special Thanks to:" },
     { "credits_text", "Lucas Clemente" },  
@@ -111,9 +111,7 @@ static credit_line_t credit_lines[] =
     { "credits_text", "" },
     { "credits_text", "" },
     { "credits_text", "" },
-    { "credits_text", "" },
-    { "credits_text", "" },
-    { "credits_h2", "~ For Lisa  ~" },
+    { "credits_text", "~~~ For Lizzy  ~~~" },
     { "credits_text", "" },
     { "credits_text", "" },
     { "credits_text", "" },
@@ -122,7 +120,9 @@ static credit_line_t credit_lines[] =
     { "credits_text", "" },
     { "credits_text", "" },
     { "credits_text", "" },
-    { "credits_text_small", "Version 1.0  ~  August 5th, 2011" },
+    { "credits_text_small", "Version 1.0  ~  July 1st, 2011" },
+    { "credits_text", "" },
+    { "credits_text", "" },
     { "credits_text", "" },
     { "credits_text", "" },
     { "credits_text", "" },
@@ -220,7 +220,7 @@ static void draw_credits_text( scalar_t time_step )
     }
     
     /* Draw strips at the top and bottom to clip out text */
-    //glDisable( GL_TEXTURE_2D );
+    glDisable( GL_TEXTURE_2D );
     
     
 #ifdef __APPLE__DISABLED__
