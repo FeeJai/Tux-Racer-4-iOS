@@ -9,9 +9,6 @@
 *~.nib/
 build/*
 
-macosx/*.xcodeproj/xcuserdata/*
-
-
 # Textmate - if you build your xcode projects with it
 *.tm_build_errors
 
@@ -21,3 +18,4 @@ macosx/*.xcodeproj/xcuserdata/*
 # osx noise
 .DS_Store
 profile
+macosx/tuxracer.xcodeproj/xcuserdata/feejai.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist
