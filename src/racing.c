@@ -333,9 +333,14 @@ void racing_loop( scalar_t time_step )
         }
     }
     if (new_terrain & (1<<Rock)) {
-        //set_sound_volume("rock_sound", 128*pow((speed/2), 2) * 
-        set_sound_volume("rock_sound", slide_volume * 15 *
-                         terrain_weights[Rock]);
+        //set_sound_volume("rock_sound", 128*pow((speed/2), 2) * terrain_weights[Rock]);
+        
+        int rockvol = slide_volume * 10 * terrain_weights[Rock];
+        
+        if (rockvol > 400)
+            rockvol = 400;
+        
+        set_sound_volume("rock_sound", rockvol);
         if (!(last_terrain & (1<<Rock))) {
             play_sound( "rock_sound", -1 );
         }
