@@ -40,6 +40,9 @@ extern "C" {
     /* implementée dans prefsController */
     bool plyrWantsToSaveOrDisplayRankingsAfterRace();
     bool plyrWantsToDisplayRankingsAfterRace();
+    
+    //implemented in ui_snow.c
+    void reset_ui_snow(void);
 #ifdef __cplusplus
 }
 #endif 

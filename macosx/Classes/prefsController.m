@@ -261,7 +261,7 @@ static const int kTRPreferencesVersion = 3;
             [alert show];
             break;
         case NEEDS_NEW_VERSION:
-            [alert setMessage:NSLocalizedString(@"For security reasons, you first need to update Tux Rider World Challenge. Go to the App Store to do the update.",@"Classes/prefsController.m")];
+            [alert setMessage:NSLocalizedString(@"For security reasons, you first need to update Tux Racer. Go to the App Store to do the update.",@"Classes/prefsController.m")];
             [alert show];
             break;
         case SUSCRIBTION_SUCCESSFUL:

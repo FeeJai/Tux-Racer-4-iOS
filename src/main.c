@@ -131,14 +131,12 @@ int main( int argc, char **argv )
     /* Print copyright notice */
 
     fprintf( stderr, 
-         "Tux Rider World Challenge -- http://www.barlow-server.com\n"
-         "a fork from:\n"
          "Tux Racer " VERSION " -- a Sunspire Studios Production "
 	     "(http://www.sunspirestudios.com)\n"
 	     "(c) 1999-2000 Jasmin F. Patry "
 	     "<jfpatry@sunspirestudios.com>\n"
 	     "\"Tux Racer\" is a trademark of Jasmin F. Patry\n"
-	     "Tux Rider World Challenge comes with ABSOLUTELY NO WARRANTY. "
+	     "Tux Racer comes with ABSOLUTELY NO WARRANTY. "
 	     "This is free software,\nand you are welcome to redistribute "
 	     "it under certain conditions.\n"
 	     "See http://www.gnu.org/copyleft/gpl.html for details.\n\n" );

@@ -335,3 +335,25 @@ make_ui_snow( point2d_t pos ) {
 	num_particles++;
     }
 }
+
+
+void
+reset_ui_snow( void ) {
+    scalar_t xres, yres;
+    
+    xres = getparam_x_resolution();
+    yres = getparam_y_resolution();
+    
+    /* Kill off & regenerate particles */
+    for (int i=0; i<num_particles; i++) {
+        particle_t *p = &particles[i];
+        
+                /* Delete the particle */
+                *p = particles[num_particles-1];
+                num_particles -= 1;
+    }
+    
+    num_particles = BASE_NUM_PARTICLES;
+    
+    init_ui_snow();
+}

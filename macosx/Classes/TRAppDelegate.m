@@ -184,6 +184,10 @@ static id sharedAppDelegate = nil;
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     glView.animationInterval = 1.0 / (_isHighFrameRateMode ? kHighFrameRateFPS : kLowFrameRateFPS);
+    
+    //Reset the snow ui
+    reset_ui_snow();
+    
 }
 
 - (void)setIsHighFrameRateMode:(BOOL)high
@@ -241,7 +245,7 @@ static id sharedAppDelegate = nil;
 	if([glView superview]) {
 		//Affiche la license
 		[glView stopAnimation];
-		[transitionView replaceSubview:glView withSubview:licenseView transition:kCATransitionMoveIn direction:kCATransitionFromBottom duration:0.50];
+		[transitionView replaceSubview:glView withSubview:howToPlayView transition:kCATransitionMoveIn direction:kCATransitionFromBottom duration:0.50];
 	} else {
 		//Affiche le jeu
         [glView startAnimation];
@@ -282,7 +286,7 @@ static id sharedAppDelegate = nil;
 }
 
 - (IBAction)openWebSite:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.barlow-server.com/tuxriderworldchallenge"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://tuxracer.jankowski.me"]];
 }
 
 - (void)showPreferences:(id)sender {

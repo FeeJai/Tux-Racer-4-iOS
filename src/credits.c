@@ -122,6 +122,7 @@ static credit_line_t credit_lines[] =
     { "credits_text", "" },
     { "credits_text", "" },
     { "credits_text", "" },
+    { "credits_text_small", "Version " VERSION "  ~  August 5th, 2011" },
     { "credits_text_small", "Version 1.0  ~  August 5th, 2011" },
     { "credits_text", "" },
     { "credits_text", "" },

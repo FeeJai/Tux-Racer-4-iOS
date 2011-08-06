@@ -31,6 +31,8 @@ void push_ui_snow( point2d_t pos );
 void draw_ui_snow( void );
 void make_ui_snow( point2d_t pos );
 void reset_ui_snow_cursor_pos( point2d_t pos );
+void reset_ui_snow( void );
+
 
 #endif /* _UI_SNOW_H_ */
 
